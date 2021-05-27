@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employee_dynamic_report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2ad23bd9-fae2-4bff-80b1-c40fd7222e7a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="page_title" class="java.lang.String">
+		<parameterDescription><![CDATA[Page Title]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[$sql]]>
+	</queryString>
+	#foreach ($col in $columnList)
+		<field name="$col.fieldName" class="java.lang.String"/>
+	#end
+	<background>
+		<band height="463" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="460" forecolor="#E6E6E6" uuid="0251db0e-f935-42ad-a300-b71883291cb3">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None">
+					<font fontName="Arial Black" size="99"/>
+				</textElement>
+				<text><![CDATA[QA]]></text>
+			</staticText>
+		</band>
+	</background>
+	<title>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="555" height="30" uuid="ba79535b-dd50-40f6-86c3-211b8e2056f4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="19" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$param_title_expression]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			#set( $x = 0 )
+			#foreach ($col in $columnList)
+				<staticText>
+					<reportElement x="$x" y="0" width="110" height="20" backcolor="rgba(138, 199, 237, 0.42745098)" mode="Opaque" uuid="$col.uuid"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Arial" isBold="true" />
+					</textElement>
+					<text><![CDATA[$col.colName]]></text>
+				</staticText>
+			#set( $x = $x + 110 )
+			#end
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+			#set( $x1 = 0 )
+			#foreach ($col in $columnList)
+				<textField>
+					<reportElement x="$x1" y="0" width="110" height="18" >
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement textAlignment="Left">
+						<font fontName="Arial"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$col.fieldExpression]]></textFieldExpression>
+				</textField>
+			#set( $x1 = $x1 + 110 )
+			#end
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

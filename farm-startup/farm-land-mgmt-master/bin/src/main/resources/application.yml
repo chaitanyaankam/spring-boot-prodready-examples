@@ -1,0 +1,22 @@
+api:
+  version: v1
+spring:
+  datasource:
+    url: jdbc:h2:file:~/farm-land-mgmt
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      path: /h2-farm-land-mgmt
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+  data:
+    rest:
+      basePath: api/v1    
+
+   
+  

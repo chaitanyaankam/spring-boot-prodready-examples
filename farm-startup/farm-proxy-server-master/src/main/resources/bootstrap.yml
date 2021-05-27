@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: farm-proxy-server
+  profiles:
+    active: ${ACTIVE_PROFILES}
+server:
+  port: ${SERVER_PORT}
+management:
+  security:
+    enabled: false

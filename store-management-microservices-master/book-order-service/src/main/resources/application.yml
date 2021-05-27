@@ -1,0 +1,13 @@
+order-service:
+    productInfo:
+      app:
+        uri: http://book-service/api/books/{bookName}
+management:
+  security:
+    enabled: false
+  endpoints:
+    enabled-by-default: true
+eureka:
+  client:
+    healthcheck:
+      enabled: true

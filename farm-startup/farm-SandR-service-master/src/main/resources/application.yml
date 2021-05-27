@@ -1,0 +1,15 @@
+#Default port is 8761
+server:
+  port: ${SERVER_PORT}
+spring:
+  profiles: 
+    active:${ACTIVE_PROFILES}
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
+  serviceUrl:
+    defaultZone: http://localhost:8761
+  

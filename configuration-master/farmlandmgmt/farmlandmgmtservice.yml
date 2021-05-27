@@ -1,0 +1,64 @@
+api:
+  version: v1
+  auth:
+    secret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000
+server:
+  port: ${SERVER_PORT}
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILES}
+  cloud:
+    config:
+      uri: ${CLOUD_CONFIG_SERVER}
+  datasource:
+    url: jdbc:h2:file:~/farm-land-mgmt
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      path: /h2-farm-land-mgmt
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+  data:
+    rest:
+      basePath: api/v1    
+services:
+  vegetable: http://farmvegetablemgmtservice
+  user: http://userservice
+
+logging:
+  level:
+    org:
+      springframework: INFO
+      hibernate: INFO
+
+eureka:
+  instance:
+    preferIpAddress: false
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+        defaultZone: ${EUREKA_SERVER_HOST}/eureka/ 
+        
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health
+
+user-api:
+  host: userservice
+  
+smtp:
+  username-api-key: 1f97e5e51138cc49a1cd848d85182b10
+  password-secret-key: aced8c835fd61ff46771acb6ab516d64
+  server-host: in-v3.mailjet.com
+  listening-port: 587

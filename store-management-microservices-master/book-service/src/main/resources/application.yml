@@ -1,0 +1,11 @@
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream, info, health
+eureka:
+  client:
+    healthcheck:
+      enabled: true

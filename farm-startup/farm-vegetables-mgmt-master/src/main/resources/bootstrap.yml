@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: farmvegetablemgmtservice
+  cloud:
+    config:
+      uri: ${CLOUD_CONFIG_SERVER}

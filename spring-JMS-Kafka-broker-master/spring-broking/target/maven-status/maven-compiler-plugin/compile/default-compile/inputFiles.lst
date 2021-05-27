@@ -1,0 +1,7 @@
+D:\Chaitanya\WIP\spring-broking\src\main\java\com\spring\edm\configuration\KafkaProducerConfiguration.java
+D:\Chaitanya\WIP\spring-broking\src\main\java\com\spring\edm\serializer\PayloadSerializer.java
+D:\Chaitanya\WIP\spring-broking\src\main\java\com\spring\edm\util\QueueConsumer.java
+D:\Chaitanya\WIP\spring-broking\src\main\java\com\spring\edm\bean\Message.java
+D:\Chaitanya\WIP\spring-broking\src\main\java\com\spring\edm\controller\MessageProducerController.java
+D:\Chaitanya\WIP\spring-broking\src\main\java\com\spring\edm\SpringBrokingApplication.java
+D:\Chaitanya\WIP\spring-broking\src\main\java\com\spring\edm\configuration\QueueConfig.java

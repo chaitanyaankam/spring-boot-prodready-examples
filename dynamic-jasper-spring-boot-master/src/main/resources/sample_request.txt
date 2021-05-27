@@ -1,0 +1,37 @@
+POST http://localhost:8082/api/report/sql
+
+{
+  "fileName": "users_report",
+  "pageTitle": "USERS REPORT-0909011",
+  "sheetName": "USERS",
+  "columnsFieldsMap": {
+    "NAME": "name",
+    "ID": "id",
+    "DESIGNATION": "designation"
+  },
+  "database": "TESTDB",
+  "sql": "select name, id, designation from User"
+}
+
+--------------------------------------------------
+POST http://localhost:8082/api/report/
+
+{
+	"fileName": "users_report",
+	"pageTitle": "USERS REPORT - 0990901",
+	"sheetName": "USERS",
+	"apiURL": "http://localhost:8082/api/report/data",
+	"columnsFieldsMap": {
+		"NAME": "name",
+		"IDENTITY": "id",
+		"DESIGNATION": "designation",
+		"AGE":"age"
+	},
+	"data": [
+			{"name": "Chaitanya Ankam", "id": "T0012", "designation":"Asoc 601", "age":"23"},
+			{"name": "Meenakshi Ankam", "id": "T0011", "designation":"Asoc 602", "age":"24"},
+			{"name": "Chaitanya Ankam", "id": "T0012", "designation":"Asoc 601", "age":"23"},
+			{"name": "Meenakshi Ankam", "id": "T0011", "designation":"Asoc 602", "age":"24"},
+			{"name": "Chaitanya Ankam", "id": "T0012", "designation":"Asoc 601", "age":"23"},
+	]
+}

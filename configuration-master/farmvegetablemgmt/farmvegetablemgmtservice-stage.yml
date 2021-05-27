@@ -1,0 +1,38 @@
+api:
+  version: v1
+  auth:
+    secret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000
+server:
+  port: ${SERVER_PORT}
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILES}
+  cloud:
+    config:
+      uri: ${CLOUD_CONFIG_SERVER}
+  datasource:
+    url: jdbc:h2:file:~/farm-vegetables
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  h2:
+    console:
+      path: /h2-farm-vegetables
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+  data:
+    rest:
+      basePath: api/v1  
+logging:
+  level:
+    org:
+      springframework: INFO
+      hibernate: INFO
+
+services:
+    land: http://farmlandmgmtservice
+    user: http://userservice

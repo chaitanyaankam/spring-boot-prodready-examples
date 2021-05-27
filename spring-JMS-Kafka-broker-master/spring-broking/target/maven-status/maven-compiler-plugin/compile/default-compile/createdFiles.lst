@@ -1,0 +1,8 @@
+com\spring\edm\serializer\PayloadSerializer.class
+com\spring\edm\util\QueueConsumer.class
+com\spring\edm\SpringBrokingApplication.class
+com\spring\edm\configuration\KafkaProducerConfiguration$KafkaProducerConfig.class
+com\spring\edm\bean\Message.class
+com\spring\edm\configuration\KafkaProducerConfiguration.class
+com\spring\edm\configuration\QueueConfig.class
+com\spring\edm\controller\MessageProducerController.class
